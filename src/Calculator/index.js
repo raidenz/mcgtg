@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import ButtonRoman from "./Components/ButtonRoman";
+import ButtonAlien from "./Components/ButtonAlien";
 
 import { countGalaxyCredit } from "utils/converter";
 import './Calculator.css'
@@ -21,7 +22,10 @@ export default class Calculator extends Component {
   }
   handleChange = (x) => {
     const { name, value } = x.target
-    this.handleState(name, value)
+    this.setState({
+      [name]: value,
+      display: []
+    })
   }
   handleNumber = (i) => {
     const { textContent } = i.target
@@ -52,12 +56,17 @@ export default class Calculator extends Component {
       })
     }
   }
+  handleDisplay = () => {
+    const {galaxy, display} = this.state
+    const view = (galaxy === 'roman') ? display.join('') : display.join(' ')
+    return view
+  }
   render() {
     return (
       <div className="calculator">
         <div className="calculator-wrapper">
           <div className="cal-display-box">
-            <input type="text" className="cal-display" value={this.state.display.join('')} />
+            <input type="text" className="cal-display" value={this.handleDisplay()} />
             <div className="chooser">
               <select name="galaxy" id="" onChange={this.handleChange} value={this.state.galaxy}>
                 <option value="roman">Roman</option>
@@ -71,11 +80,25 @@ export default class Calculator extends Component {
               </select>
             </div>
           </div>
-          <ButtonRoman
-            handleNumber={this.handleNumber}
-            handleDelete={this.handleDelete}
-            handleResults={this.handleResults}
-          />
+          {
+            (this.state.galaxy === 'roman')
+              ? (
+                <ButtonRoman
+                  handleNumber={this.handleNumber}
+                  handleDelete={this.handleDelete}
+                  handleResults={this.handleResults}
+                />
+              )
+              : (
+                <ButtonAlien
+                  handleNumber={this.handleNumber}
+                  handleDelete={this.handleDelete}
+                  handleResults={this.handleResults}
+                />
+                )
+
+          }
+
         </div>
       </div>
     )
