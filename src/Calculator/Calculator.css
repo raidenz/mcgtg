@@ -5,9 +5,12 @@ body{
 .calculator {
   background-color: rgb(250, 145, 131);
   min-height: 100vh;
+  display: grid;
+  align-content: center;
 }
 .calculator-wrapper {
   width: 350px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
@@ -20,7 +23,7 @@ body{
   width: 100%;
   border: 0;
   background-color: #f5f5f5;
-  font-size: 20px;
+  font-size: 35px;
   text-align: right;
   padding: 10px 5px;
   box-sizing: border-box;
@@ -30,7 +33,7 @@ body{
 .cal-button-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 100px 100px 100px 100px;
+  grid-template-rows: 70px 70px 70px 70px;
   grid-gap: 3px;
   overflow: hidden;
   /* grid-auto-flow: dense; */

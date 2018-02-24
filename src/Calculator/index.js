@@ -13,16 +13,13 @@ export default class Calculator extends Component {
             <input type="text" className="cal-display" />
           </div>
             <div className="cal-button-wrapper flex-wrap">
-              <div className="cal-button">7</div>
-              <div className="cal-button">8</div>
-              <div className="cal-button">9</div>
-              <div className="cal-button">4</div>
-              <div className="cal-button">5</div>
-              <div className="cal-button">6</div>
-              <div className="cal-button">1</div>
-              <div className="cal-button">2</div>
-              <div className="cal-button">3</div>
-              <div className="cal-button">0</div>
+              <div className="cal-button">C</div>
+              <div className="cal-button">D</div>
+              <div className="cal-button">M</div>
+              <div className="cal-button">V</div>
+              <div className="cal-button">X</div>
+              <div className="cal-button">L</div>
+              <div className="cal-button">I</div>
               <div className="cal-button">Del</div>
               <div className="cal-button">=</div>
             </div>
