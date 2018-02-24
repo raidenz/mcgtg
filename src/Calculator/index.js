@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import ButtonRoman from "./Components/ButtonRoman";
+
 import { countGalaxyCredit } from "utils/converter";
 import './Calculator.css'
 
@@ -16,6 +18,10 @@ export default class Calculator extends Component {
     this.setState({
       [name]: value
     })
+  }
+  handleChange = (x) => {
+    const { name, value } = x.target
+    this.handleState(name, value)
   }
   handleNumber = (i) => {
     const { textContent } = i.target
@@ -53,29 +59,23 @@ export default class Calculator extends Component {
           <div className="cal-display-box">
             <input type="text" className="cal-display" value={this.state.display.join('')} />
             <div className="chooser">
-              <select name="" id="">
-                <option value="">Roman</option>
-                <option value="">Alien</option>
+              <select name="galaxy" id="" onChange={this.handleChange} value={this.state.galaxy}>
+                <option value="roman">Roman</option>
+                <option value="alien">Alien</option>
               </select>
-              <select name="" id="">
+              <select name="credit" id="" onChange={this.handleChange} value={this.state.credit}>
                 <option value="">Credit (none)</option>
-                <option value="">Silver</option>
-                <option value="">Gold</option>
-                <option value="">Iron</option>
+                <option value="silver">Silver</option>
+                <option value="gold">Gold</option>
+                <option value="iron">Iron</option>
               </select>
             </div>
           </div>
-            <div className="cal-button-wrapper flex-wrap">
-              <div className="cal-button" onClick={this.handleNumber}>C</div>
-              <div className="cal-button" onClick={this.handleNumber}>D</div>
-              <div className="cal-button" onClick={this.handleNumber}>M</div>
-              <div className="cal-button" onClick={this.handleNumber}>V</div>
-              <div className="cal-button" onClick={this.handleNumber}>X</div>
-              <div className="cal-button" onClick={this.handleNumber}>L</div>
-              <div className="cal-button" onClick={this.handleNumber}>I</div>
-              <div className="cal-button" onClick={this.handleDelete}>Del</div>
-              <div className="cal-button" onClick={this.handleResults}>=</div>
-            </div>
+          <ButtonRoman
+            handleNumber={this.handleNumber}
+            handleDelete={this.handleDelete}
+            handleResults={this.handleResults}
+          />
         </div>
       </div>
     )

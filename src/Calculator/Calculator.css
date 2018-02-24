@@ -45,7 +45,7 @@ body{
 .cal-button-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 70px 70px 70px 70px;
+  grid-template-rows: 70px 70px 70px;
   grid-gap: 3px;
   overflow: hidden;
   /* grid-auto-flow: dense; */
