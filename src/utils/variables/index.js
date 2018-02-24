@@ -28,3 +28,10 @@ const creditValue = {
 }
 
 const failText = "I have no idea what you are talking about"
+
+export {
+  roman,
+  galaxyType,
+  creditValue,
+  failText
+}
