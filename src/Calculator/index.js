@@ -11,6 +11,18 @@ export default class Calculator extends Component {
           calculator init {qdata}
           <div className="cal-display-box">
             <input type="text" className="cal-display" />
+            <div className="chooser">
+              <select name="" id="">
+                <option value="">Roman</option>
+                <option value="">Alien</option>
+              </select>
+              <select name="" id="">
+                <option value="">Credit (none)</option>
+                <option value="">Silver</option>
+                <option value="">Gold</option>
+                <option value="">Iron</option>
+              </select>
+            </div>
           </div>
             <div className="cal-button-wrapper flex-wrap">
               <div className="cal-button">C</div>

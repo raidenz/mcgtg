@@ -30,6 +30,18 @@ body{
   margin-bottom: 3px;
 }
 
+.chooser{
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  grid-template-rows: 35px;
+  margin-bottom: 3px;
+  grid-gap: 3px;
+}
+.chooser select{
+  border: 0 solid;
+  font-size: 18px;
+}
+
 .cal-button-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
