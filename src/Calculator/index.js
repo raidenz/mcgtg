@@ -103,9 +103,7 @@ export default class Calculator extends Component {
                   handleResults={this.handleResults}
                 />
                 )
-
           }
-
         </div>
       </div>
     )
