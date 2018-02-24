@@ -20,11 +20,17 @@ export default class Calculator extends Component {
       [name]: value
     })
   }
-  handleChange = (x) => {
+  handleGalaxyChange = (x) => {
     const { name, value } = x.target
     this.setState({
       [name]: value,
       display: []
+    })
+  }
+  handleChange = (x) => {
+    const { name, value } = x.target
+    this.setState({
+      [name]: value,
     })
   }
   handleNumber = (i) => {
@@ -47,8 +53,9 @@ export default class Calculator extends Component {
   }
   handleResults = () => {
     const data = this.state.display.join(' ')
-    const {hasResults} = this.state
-    const newData = countGalaxyCredit({ galaxyNumber: data, creditType: "" })
+    const { hasResults, galaxy, credit } = this.state
+    const creditType = (galaxy !== 'roman') ? credit :''
+    const newData = countGalaxyCredit({ galaxyNumber: data, creditType })
     if (!hasResults) {
       this.setState({
         display: [newData],
@@ -66,9 +73,9 @@ export default class Calculator extends Component {
       <div className="calculator">
         <div className="calculator-wrapper">
           <div className="cal-display-box">
-            <input type="text" className="cal-display" value={this.handleDisplay()} />
+            <input type="text" className="cal-display" value={this.handleDisplay()} placeholder="insert number"/>
             <div className="chooser">
-              <select name="galaxy" id="" onChange={this.handleChange} value={this.state.galaxy}>
+              <select name="galaxy" id="" onChange={this.handleGalaxyChange} value={this.state.galaxy}>
                 <option value="roman">Roman</option>
                 <option value="alien">Alien</option>
               </select>

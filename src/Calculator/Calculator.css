@@ -40,6 +40,8 @@ body{
 .chooser select{
   border: 0 solid;
   font-size: 18px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
 
 .cal-button-wrapper {
