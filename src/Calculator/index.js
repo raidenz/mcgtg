@@ -6,30 +6,45 @@ export default class Calculator extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      display: []
+      display: [],
+      hasResults: false,
+      galaxy: 'roman',
+      credit: '',
     }
+  }
+  handleState = (name, value) => {
+    this.setState({
+      [name]: value
+    })
   }
   handleNumber = (i) => {
     const { textContent } = i.target
-    const currText = this.state.display
-    const newData = currText.concat([textContent])
-    this.setState({
-      display: newData
-    })
+    const { display, hasResults } = this.state
+    const newData = display.concat([textContent])
+    if (hasResults) {
+      this.setState({
+        hasResults: false,
+        display: [textContent]
+      })
+    } else {
+      this.handleState('display', newData)
+    }
   }
   handleDelete = () => {
     const currText = this.state.display
     currText.pop()
-    this.setState({
-      display: currText
-    })
+    this.handleState('display', currText)
   }
   handleResults = () => {
     const data = this.state.display.join(' ')
+    const {hasResults} = this.state
     const newData = countGalaxyCredit({ galaxyNumber: data, creditType: "" })
-    this.setState({
-      display: [newData]
-    })
+    if (!hasResults) {
+      this.setState({
+        display: [newData],
+        hasResults: true
+      })
+    }
   }
   render() {
     return (
