@@ -37,10 +37,6 @@ const countGalaxyCredit = ({ galaxyNumber, creditType }) => {
 
 }
 
-// const qData = countGalaxyCredit({ galaxyNumber: "X C ", creditType: "" })
-
-// console.log(qData)
-
 export {
   countGalaxyCredit
 }
