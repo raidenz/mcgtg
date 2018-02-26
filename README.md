@@ -1,6 +1,8 @@
 # GALAXY MERCHANT TRADING GUIDE
 Solving story, intergalactic trading numerical calculator (Sounds like that)
 
+view this online HERE http://themesidea.com/dev/galaxycalculator/
+
 ## Requirement
 - A web Interface.
 - A valid test case.
@@ -80,6 +82,11 @@ npm start
 npm test
 ```
 
+## Build App
+```sh
+npm run build
+```
+
 ## Working detail
 ```js
 detail = {
@@ -87,6 +94,7 @@ detail = {
   nickname: 'Tomi',
   email: 'th.deny@gmail.com',
   git: 'http://github.com/raidenz/',
+  linkedIn: 'https://www.linkedin.com/in/widiyastanto/',
   role: 'Front End',
 }
 ```
